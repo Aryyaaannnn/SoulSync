@@ -1,0 +1,258 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  margin-left: 20px;
+  padding: 0;
+  background: linear-gradient(to right, #fdfcfb, #8ce7f3); 
+  color: #333;
+  min-height: 100vh;
+  position: relative;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.left-column {
+  flex: 1;
+  min-width: 300px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+.right-column {
+  flex: 1;
+  min-width: 300px;
+  background: #fffefcd9;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  overflow-y: auto;
+  max-height: 600px;
+}
+h1 {
+  font-family: 'AncizarSerif', serif;
+  font-weight: normal;
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #2d2d2d;
+}
+form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+form select#mood {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  font-size: 14px;
+  background: #fff;
+  transition: border-color 0.3s;
+}
+
+form select#mood:focus {
+  border-color: #a1887f;
+  outline: none;
+}
+form textarea {
+  width: 50%;
+  padding:10px;
+  margin-left: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 15px;
+  resize: vertical;
+  min-height: 300px;
+  background: #d9e1e9;
+  margin-bottom: 20px;
+}
+.habits label {
+  margin-right: 15px;
+  font-weight: 500;
+  font-size: 14px;
+}
+form input[type="submit"] {
+  background: linear-gradient(to right, #81c784, #388e3c);
+  color: rgb(99, 226, 137);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, transform 0.2s;
+}
+
+form input[type="submit"]:hover {
+  background: linear-gradient(to right, #66bb6a, #2e7d32);
+  transform: scale(1.05);
+}
+.right-column h2 {
+  margin-top: 0;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.entry {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-left: 4px solid #a1887f;
+  background: #f9f9f7;
+  border-radius: 8px;
+}
+
+.entry em {
+  display: block;
+  margin-top: 5px;
+  font-style: italic;
+  color: #555;
+}
+#downloadBtn {
+  background: linear-gradient(to right, #64b5f6, #1976d2);
+  color: rgb(113, 240, 149);
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+#downloadBtn:hover {
+  background: linear-gradient(to right, #42a5f5, #0d47a1);
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  form select#mood,
+  form textarea {
+    width: 100%;
+  }
+}
+form select[name="mood"] {
+  
+  width: 60%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid #aaa;
+  font-size: 16px;
+  background: #fefefe;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+form select[name="mood"]:focus {
+  border-color: #009688;
+  box-shadow: 0 0 8px rgba(0, 150, 136, 0.3);
+  outline: none;
+}
+
+
+form input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 8px;
+  accent-color: #009688; 
+  cursor: pointer;
+}
+
+form input[type="checkbox"] + label {
+  font-weight: 500;
+  margin-right: 20px;
+  font-size: 15px;
+  vertical-align: middle;
+  color: #333;
+}
+
+form button {
+  background: linear-gradient(to right, #4caf50, #2e7d32);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+
+form button:hover {
+  background: linear-gradient(to right, #43a047, #1b5e20);
+  transform: scale(1.05);
+}
+
+#downloadBtn,
+button[onclick="downloadXML()"] {
+  background: linear-gradient(to right, #42a5f5, #1e88e5);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin-bottom: 200px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  position: relative;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#downloadBtn:hover,
+button[onclick="downloadXML()"]:hover {
+  background: linear-gradient(to right, #1e88e5, #0d47a1);
+  transform: scale(1.05);
+}
+@font-face {
+  font-family: 'AncizarSerif';
+  src: url('../fonts/Ancizar_Serif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+form select[name="mood"] {
+  font-family: 'AncizarSerif', serif;
+  font-weight: normal;
+}
+.toast {
+  visibility: hidden;
+  min-width: 300px;
+  background-color: #0f0f0f;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 1rem;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-family: 'Georgia', serif;
+  transition: opacity 0.5s ease-in-out, visibility 3.5s;
+  opacity: 0;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
